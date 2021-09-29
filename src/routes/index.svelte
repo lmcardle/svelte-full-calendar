@@ -11,7 +11,22 @@
 		await import('@fullcalendar/core/vdom');
 		calendar = new Calendar(calendarEl, {
 			plugins: [dayGridPlugin],
-			initialView: 'dayGridMonth'
+			initialView: 'dayGridWeek',
+			headerToolbar: {
+				left: 'prev,next',
+				center: 'title',
+				right: 'dayGridDay,dayGridWeek,dayGridMonth'
+			},
+			firstDay: 1,
+			editable: true,
+			events: [
+				{
+					id: '132',
+					title: 'The quick brown fox jumpped over the moon',
+					start: '2021-09-29',
+					editable: true
+				}
+			]
 		});
 		calendar.render();
 	});
